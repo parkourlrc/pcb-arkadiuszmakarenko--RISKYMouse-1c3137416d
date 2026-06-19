@@ -13,6 +13,7 @@ void GPIO_Config()
 
     /*Configure GPIO pin Output Level */
     GPIO_WriteBit(LED_GPIO_Port,LED_Pin, Bit_SET);
+    GPIO_WriteBit(LED2_GPIO_Port,LED2_Pin, Bit_SET);
     GPIO_WriteBit(RHQ_GPIO_Port, RHQ_Pin, Bit_RESET);
     GPIO_WriteBit(LVQ_GPIO_Port, LVQ_Pin, Bit_RESET);
     GPIO_WriteBit(BH_GPIO_Port, BH_Pin, Bit_RESET);
@@ -30,6 +31,11 @@ void GPIO_Config()
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(LED_GPIO_Port, &GPIO_InitStructure);
+
+    GPIO_InitStructure.GPIO_Pin = LED2_Pin;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(LED2_GPIO_Port, &GPIO_InitStructure);
 
 
     GPIO_InitStructure.GPIO_Pin = LB_Pin;
